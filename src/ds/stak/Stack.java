@@ -2,9 +2,9 @@ package ds.stak;
 
 public class Stack {
 
-	private int maxSize;
-	private char[] stackArray;
-	private int top;
+	private int maxSize;  // it'll store the size of the stack
+	private char[] stackArray;  // slots to maintain the data
+	private int top;  // index position for the element at the top
 	
 	public Stack(int size) {
 		this.maxSize = size;
