@@ -3,16 +3,16 @@ package ds.stak;
 public class Stack {
 
 	private int maxSize;
-	private long[] stackArray;
+	private char[] stackArray;
 	private int top;
 	
 	public Stack(int size) {
 		this.maxSize = size;
-		this.stackArray = new long[maxSize];
+		this.stackArray = new char[maxSize];
 		this.top = -1;
 	}
 	
-	public void push(long j) {
+	public void push(char j) {
 		if (isFull()) {
 			System.out.println("Cannot added the " + j + " because the stack is already full!");
 		} else {
@@ -21,7 +21,7 @@ public class Stack {
 		}
 	}
 	
-	public long pop() {
+	public char pop() {
 		if (isEmpty()) {
 			System.out.println("the stack is empty");
 			return '0';
@@ -32,7 +32,7 @@ public class Stack {
 		}
 	}
 	
-	public long peak() {
+	public char peak() {
 		return stackArray[top];
 	}
 	
