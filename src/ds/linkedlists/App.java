@@ -4,20 +4,20 @@ public class App {
 
 	public static void main(String[] args) {
 		Node nodeA = new Node();
-		nodeA.data = 9;
+		nodeA.setData(9);
 		
 		Node nodeB = new Node();
-		nodeB.data = 1;
+		nodeB.setData(1);
 		
 		Node nodeC = new Node();
-		nodeC.data = 7;
+		nodeC.setData(7);
 		
 		Node nodeD = new Node();
-		nodeD.data = 8;
+		nodeD.setData(5);
 		
-		nodeA.next = nodeB;
-		nodeB.next = nodeC;
-		nodeC.next = nodeD;
+		nodeA.setNext(nodeB);
+		nodeB.setNext(nodeC);
+		nodeC.setNext(nodeD);
 		
 		System.out.println(listLength(nodeA));
 		System.out.println(listLength(nodeC));
@@ -29,7 +29,7 @@ public class App {
 		
 		while (currentNode != null) {
 			length++;
-			currentNode = currentNode.next;
+			currentNode = currentNode.getNext();
 		}
 		
 		return length;
