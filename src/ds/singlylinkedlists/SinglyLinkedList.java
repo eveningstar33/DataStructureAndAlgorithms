@@ -16,33 +16,42 @@ public class SinglyLinkedList {
 	// insert at the beginning of the list
 	public void insertFirst(int data) {
 		Node newNode = new Node();
-		newNode.data = data;
-		newNode.next = first;
+		newNode.setData(data);
+		newNode.setNext(first); 
 		first = newNode;
 	}
 	
 	public Node deleteFirst() {
-		Node temp = first;
-		first = first.next;
-		return temp;
+	    if (isEmpty()) {
+	        System.out.println("The list is empty! You cannot delete a node from an empty list!"); 
+	        return null;
+	    } else {
+			Node temp = first;
+			first = first.getNext();
+			return temp;
+	    }
 	}
 	
 	public void displayList() {
-		System.out.println("List (first --> last) ");
-		Node currentNode = first;
-		while (currentNode != null) {
-			currentNode.displayNode();
-			currentNode = currentNode.next;
-		}
+	    if (isEmpty()) {
+	        System.out.println("The list is empty!"); 
+	    } else {
+			System.out.println("List (first --> last): ");
+			Node currentNode = first;
+			while (currentNode != null) {
+				currentNode.displayNode();
+				currentNode = currentNode.getNext();
+			}
+	    }
 	}
 	
 	public void insertLast(int data) {
 		Node currentNode = first;
-		while (currentNode.next != null) {
-			currentNode = currentNode.next;
+		while (currentNode.getNext() != null) {
+			currentNode = currentNode.getNext();
 		}
 		Node newNode = new Node();
-		newNode.data = data;
-		currentNode.next = newNode;
+		newNode.setData(data);
+		currentNode.setNext(newNode);
 	}
 }

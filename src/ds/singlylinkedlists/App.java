@@ -10,6 +10,7 @@ public class App {
 		myList.insertFirst(99);
 		myList.insertFirst(74);
 		myList.insertLast(88888);
+		myList.deleteFirst();
 		
 		myList.displayList();
 	}
