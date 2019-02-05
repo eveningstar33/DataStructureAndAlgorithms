@@ -16,46 +16,77 @@ public class CircularLinkedList {
 	
 	public void insertFirst(int data) {
 		Node newNode = new Node();
-		newNode.data = data;
+		newNode.setData(data);
 		
 		if (isEmpty()) {
 			last = newNode;
 		}
 		
-		newNode.next = first;
+		newNode.setNext(first);
 		first = newNode;
 	}
 	
 	public void insertLast(int data) {
 		Node newNode = new Node();
-		newNode.data = data;
+		newNode.setData(data);
 		
 		if (isEmpty()) {
 			first = newNode;
 		} else {
-			last.next = newNode;
+			last.setNext(newNode); 
 			last = newNode;
 		}
 	}
 	
-	public int deleteFirst() {
-		int temp = first.data;
-		
-		if (first.next == null) {
-			last = null;
-		}
-		
-		first = first.next;
-		return temp;
+	public Node deleteFirst() {
+	    if (isEmpty()) {
+	        System.out.println("The list is empty! You cannot delete a node from an empty list!"); 
+	        return null;
+	    } else {
+			Node temp = first;
+			
+			if (first.getNext() == null) {
+				last = null;
+			}
+			
+			first = first.getNext();
+			return temp;
+	    }
+	}
+	
+	public Node deleteLast() {
+	    if (isEmpty()) {
+	        System.out.println("The list is empty! You cannot delete a node from an empty list!"); 
+	        return null;
+	    } else {
+	    	Node temp = last;
+	    	
+	    	if (first.getNext() == null) {
+	    		first = null;
+	    		last = null;
+	    	} else {
+		    	Node current = first;
+		    	while (current.getNext() != last) {
+		    		current = current.getNext();
+		    	}
+		    	current.setNext(null); 
+		    	last = current;
+	    	}
+	    	return temp;
+	    }
 	}
 	
 	public void displayList() {
-		System.out.println("List (first --> last) ");
-		Node currentNode = first;
-		while (currentNode != null) {
-			currentNode.displayNode();
-			currentNode = currentNode.next;
-		}
-		System.out.println(); 
+	    if (isEmpty()) {
+	        System.out.println("The list is empty!"); 
+	    } else {
+			System.out.println("List (first --> last) ");
+			Node currentNode = first;
+			while (currentNode != null) {
+				currentNode.displayNode();
+				currentNode = currentNode.getNext();
+			}
+			System.out.println(); 
+	    }
 	}
 }
