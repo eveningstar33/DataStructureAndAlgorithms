@@ -1,4 +1,4 @@
-package sort.bubble;
+package algo.bubblesort;
 
 // The time complexity of Bubble Sort is O(n*n), so it's quadratic algorithm.
 // This algorithm is one of the least efficient algorithms.
