@@ -14,10 +14,11 @@ public class App {
 	public static void quickSort(int[] inputArray, int start, int end) {
 		if (start < end) {
 			// index position of the correctly placed value in the array 
-			int pp = partition(inputArray, start, end);
-			
-			quickSort(inputArray, start, pp-1);  // sorts the left half of the range
-			quickSort(inputArray, pp+1, end);    // sorts the right half of the range
+			int pivotIndex = partition(inputArray, start, end);
+			// sorts the left half of the range
+			quickSort(inputArray, start, pivotIndex - 1);  
+			// sorts the right half of the range
+			quickSort(inputArray, pivotIndex + 1, end);    
 		}
 	}
 	
@@ -28,7 +29,9 @@ public class App {
 		for (int j = start; j <= end - 1; j++ ) {
 			if (inputArray[j] < pivot) {
 				i++;
-				swap(inputArray, i, j);
+				if (i != j) {
+					swap(inputArray, i, j);
+				}
 			}
 		}
 		swap(inputArray, i + 1, end);
