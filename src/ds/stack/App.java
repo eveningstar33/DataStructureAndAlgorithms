@@ -1,4 +1,4 @@
-package ds.stak;
+package ds.stack;
 
 public class App {
 	
