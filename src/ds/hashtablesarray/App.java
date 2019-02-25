@@ -8,23 +8,27 @@ public class App {
         Employee marySmith = new Employee("Mary", "Smith", 22);
         Employee mikeWilson = new Employee("Mike", "Wilson", 3245);
         Employee billEnd = new Employee("Bill", "End", 78);
-        Employee cacat = new Employee("Mars", "Cacat", 422);
-        Employee gaga = new Employee("Gaga", "Ertyu", 3647);
-        Employee paul = new Employee("Paul", "Bobos", 1920);
+        Employee evaHarat = new Employee("Eva", "Harat", 422);
+        Employee tomHanks = new Employee("Tom", "Hanks", 3647);
+        Employee paulBobos = new Employee("Paul", "Bobos", 1920);
         
         SimpleHashtable ht = new SimpleHashtable();
         ht.put("Jones", janeJones);
         ht.put("Doe", johnDoe);
         ht.put("Wilson", mikeWilson);
         ht.put("Smith", marySmith);
-        ht.put("Cacat", cacat);
-        ht.put("Ertyu", gaga);
-        ht.put("Bobos", paul);
+        ht.put("Harat", evaHarat);
+        ht.put("Hanks", tomHanks);
+        ht.put("Bobos", paulBobos);
 
         ht.printHashtable();
         
         System.out.println("Retrieve key Wilson: " + ht.get("Wilson"));
         System.out.println("Retrieve key Smith: " + ht.get("Smith"));
+        
+        ht.remove("Harat");
+        ht.remove("Hanks");
+        ht.printHashtable();
 	}
 
 }

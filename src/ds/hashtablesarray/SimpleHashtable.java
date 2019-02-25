@@ -25,6 +25,18 @@ public class SimpleHashtable {
 		}
 	}
 	
+	public Employee remove(String key) {
+		int hashedKey = findKey(key);
+		System.out.println("hashedKey = " + hashedKey); 
+		if (hashedKey == -1) {
+			return null;
+		}
+		
+		Employee employee = hashtable[hashedKey].getEmployee();
+		hashtable[hashedKey] = null;
+		return employee;
+	}
+	
 	public Employee get(String key) {
 		int hashedKey = findKey(key);
 		if (hashedKey == -1) {
@@ -60,7 +72,7 @@ public class SimpleHashtable {
 		}
 	}
 	
-	public int incrementHashedKey(int hashedKey) {
+	private int incrementHashedKey(int hashedKey) {
 		if (hashedKey == hashtable.length - 1) {
 			hashedKey = 0;
 		} else {
