@@ -12,7 +12,8 @@ public class App {
         Employee tomHanks = new Employee("Tom", "Hanks", 3647);
         Employee paulBobos = new Employee("Paul", "Bobos", 1920);
         
-        SimpleHashtable ht = new SimpleHashtable();
+//        SimpleHashtable ht = new SimpleHashtable();
+        ChainedHashtable ht = new ChainedHashtable();
         ht.put("Jones", janeJones);
         ht.put("Doe", johnDoe);
         ht.put("Wilson", mikeWilson);
