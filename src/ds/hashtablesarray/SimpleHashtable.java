@@ -34,6 +34,14 @@ public class SimpleHashtable {
 		
 		Employee employee = hashtable[hashedKey].getEmployee();
 		hashtable[hashedKey] = null;
+		
+		StoredEmployee[] oldHashtable = hashtable;
+		hashtable = new StoredEmployee[oldHashtable.length];
+		for (int i = 0; i < oldHashtable.length; i++) {
+			if (oldHashtable[i] != null) {
+				put(oldHashtable[i].getKey(), oldHashtable[i].getEmployee());
+			}
+		}
 		return employee;
 	}
 	
